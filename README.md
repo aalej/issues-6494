@@ -12,5 +12,6 @@
 ```shell
 i  functions: Beginning execution of "us-central1-beforesignin"
 >   ------------- beforeUserSignedIn --------------- 
->  beforesignin: {"uid":"i96B1AFuo5oxQGbr2FpfWOZC2erq","email":"otter.chicken.994@example.com","emailVerified":true,"displayName":"Otter Chicken","disabled":false,"metadata":{"creationTime":"Thu, 18 Dec 55817 18:31:58 GMT","lastSignInTime":"Thu, 18 Dec 55817 18:31:58 GMT"},"providerData":[{"uid":"9261709563690481253687327006614821084506","displayName":"Otter Chicken","email":"otter.chicken.994@example.com","providerId":"google.com"}],"customClaims":{},"tokensValidAfterTime":null,"multiFactor":null}
+>  beforesignin: {"uid":"JK75ynwWReVROYsEd3sTlu6VLv4N","email":"chicken.olive.386@example.com","emailVerified":true,"displayName":"Chicken Olive","disabled":false,"metadata":{"creationTime":"Mon, 19 Jan 55818 16:58:17 GMT","lastSignInTime":"Mon, 19 Jan 55818 16:58:17 GMT"},"providerData":[{"uid":"3410642192363621136445921929571185356542","displayName":"Chicken Olive","email":"chicken.olive.386@example.com","providerId":"google.com"}],"customClaims":{},"tokensValidAfterTime":null,"multiFactor":null}
+i  functions: Finished "us-central1-beforesignin" in 21.108289ms
 ```
