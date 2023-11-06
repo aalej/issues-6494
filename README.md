@@ -1,5 +1,8 @@
 # Repro for Firebase Tools issue 6494
 
+firebase-tools: v12.8.0<br>
+firebase-js-sdk: v10.5.2<br>
+
 ### Steps to reproduce
 
 1. Run `firebase emulators:start --project demo-test`
