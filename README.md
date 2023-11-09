@@ -1,20 +1,35 @@
 # Repro for Firebase Tools issue 6494
 
-firebase-tools: v12.8.0<br>
+firebase-tools: v12.8.1<br>
 firebase-js-sdk: v10.5.2<br>
+
+### Installing dependencies
+
+Steps to install dependencies and build web app. Alternatively, run
+`bash install-dep.bash` to install dependencies and build the web app.
+
+1. Run `npm install` for the ff folders:
+   - http-func
+   - functions
+   - pubsub
+   - web-app
+1. Run `npm run buid` for the ff:
+   - web-app
 
 ### Steps to reproduce
 
 1. Run `firebase emulators:start --project demo-test`
-1. In a different terminal, run `cd web-app`
-1. Run `npm run start`
-1. Open "http://127.0.0.1:3000"
+1. Open "http://127.0.0.1:5000"
 1. Click the "Sign in with Google" button
    - Sign in as expected
-1. Logs in the terminal running the Firebase emulator should show that `beforeUserSignedIn` was triggered.
-```shell
-i  functions: Beginning execution of "us-central1-beforesignin"
->   ------------- beforeUserSignedIn --------------- 
->  beforesignin: {"uid":"JK75ynwWReVROYsEd3sTlu6VLv4N","email":"chicken.olive.386@example.com","emailVerified":true,"displayName":"Chicken Olive","disabled":false,"metadata":{"creationTime":"Mon, 19 Jan 55818 16:58:17 GMT","lastSignInTime":"Mon, 19 Jan 55818 16:58:17 GMT"},"providerData":[{"uid":"3410642192363621136445921929571185356542","displayName":"Chicken Olive","email":"chicken.olive.386@example.com","providerId":"google.com"}],"customClaims":{},"tokensValidAfterTime":null,"multiFactor":null}
-i  functions: Finished "us-central1-beforesignin" in 21.108289ms
-```
+1. Logs in the terminal do not show that `beforeUserSignedIn` was triggered
+
+### Notes
+
+http-func - contains a single http function<br>
+functions - contains the auth trigger<br>
+pubsub - contains the pubsub function<br>
+web-app - contains a web application for auth to trigger `beforeUserSignedIn`<br>
+
+Issue seems to be caused by usage of codebases(?) moving the codebase with the
+auth trigger to the last index resolves the auth trigger issue.
